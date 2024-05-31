@@ -3,7 +3,7 @@ import ProductCard from '../components/ProductCard';
 
 const products = [
     {
-        image: "/cagristore/src/assets/img/bestSellerProduct/1.jpeg",
+        image: "/src/assets/img/bestSellerProduct/1.jpeg",
         title: "Graphic Design",
         department: "English Department",
         originalPrice: 16.48,
@@ -11,7 +11,7 @@ const products = [
         colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
     },
     {
-        image: "/cagristore/src/assets/img/bestSellerProduct/2.jpeg",
+        image: "/src/assets/img/bestSellerProduct/2.jpeg",
         title: "Graphic Design",
         department: "English Department",
         originalPrice: 16.48,
@@ -19,7 +19,7 @@ const products = [
         colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
     },
     {
-        image: "/cagristore/src/assets/img/bestSellerProduct/3.jpeg",
+        image: "/src/assets/img/bestSellerProduct/3.jpeg",
         title: "Graphic Design",
         department: "English Department",
         originalPrice: 16.48,
@@ -27,7 +27,7 @@ const products = [
         colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
     },
     {
-        image: "/cagristore/src/assets/img/bestSellerProduct/4.jpeg",
+        image: "/src/assets/img/bestSellerProduct/4.jpeg",
         title: "Graphic Design",
         department: "English Department",
         originalPrice: 16.48,
@@ -35,7 +35,7 @@ const products = [
         colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
     },
     {
-        image: "/cagristore/src/assets/img/bestSellerProduct/5.jpeg",
+        image: "/src/assets/img/bestSellerProduct/5.jpeg",
         title: "Graphic Design",
         department: "English Department",
         originalPrice: 16.48,
@@ -43,7 +43,7 @@ const products = [
         colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
     },
     {
-        image: "/cagristore/src/assets/img/bestSellerProduct/6.jpeg",
+        image: "/src/assets/img/bestSellerProduct/6.jpeg",
         title: "Graphic Design",
         department: "English Department",
         originalPrice: 16.48,
@@ -51,7 +51,7 @@ const products = [
         colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
     },
     {
-        image: "/cagristore/src/assets/img/bestSellerProduct/7.jpeg",
+        image: "/src/assets/img/bestSellerProduct/7.jpeg",
         title: "Graphic Design",
         department: "English Department",
         originalPrice: 16.48,
@@ -59,7 +59,7 @@ const products = [
         colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
     },
     {
-        image: "/cagristore/src/assets/img/bestSellerProduct/8.jpeg",
+        image: "/src/assets/img/bestSellerProduct/8.jpeg",
         title: "Graphic Design",
         department: "English Department",
         originalPrice: 16.48,

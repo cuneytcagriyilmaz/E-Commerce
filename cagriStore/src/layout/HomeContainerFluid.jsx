@@ -20,7 +20,7 @@ function HomeContainerFluid() {
                     </button>
                 </div>
                 <div className="relative">
-                    <img src='/cagristore/src/assets/img/homeContainerFluid/homeContainerFluid.png' alt="ContainerFluid" className="h-4/5 w-full object-cover" />
+                    <img src='src/assets/img/homeContainerFluid/homeContainerFluid.png' alt="ContainerFluid" className="h-4/5 w-full object-cover" />
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@ function HomeContainerFluid() {
         <div className="pt-16 pb-2 flex flex-col items-center justify-center bg-mainBackgroundWhite">
             <div className="flex flex-row items-center justify-center">
                 <div className="pt-6 relative w-1/2 flex items-center justify-center">
-                    <img src='/cagristore/src/assets/img/homeContainerFluid/homeContainerFluid.png' className="h-full object-cover" />
+                    <img src='src/assets/img/homeContainerFluid/homeContainerFluid.png' className="h-full object-cover" />
                 </div>
                 <div className="p-6 text-white justify-start text-left w-1/2">
                     <p className="text-sm text-textColorH2">SUMMER 2020</p>
@@ -42,7 +42,7 @@ function HomeContainerFluid() {
                         <button className="bg-green-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
                             BUY NOW
                         </button>
-                        <button className="text-green-500 border-[1px] border-green-500 hover:bg-green-500   font-bold py-2 px-4 rounded">
+                        <button className="text-green-500 border-[1px] border-green-500 hover:bg-green-600   font-bold py-2 px-4 rounded">
                             Learn More
                         </button>
                     </div>

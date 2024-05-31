@@ -3,7 +3,7 @@ import FeaturedPostCard from '../components/FeaturedPostCard';
 
 const featuredPostData = [
     {
-        image: "/cagristore/src/assets/img/FeaturedPosts/featured1.jpeg",
+        image: "/src/assets/img/FeaturedPosts/featured1.jpeg",
         company: "Google",
         trending: "Trending",
         new: "New",
@@ -13,7 +13,7 @@ const featuredPostData = [
         comments: 10
     },
     {
-        image: "/cagristore/src/assets/img/FeaturedPosts/feature2.jpeg",
+        image: "/src/assets/img/FeaturedPosts/feature2.jpeg",
         company: "Google",
         trending: "Trending",
         new: "New",
@@ -23,7 +23,7 @@ const featuredPostData = [
         comments: 5
     },
     {
-        image: "/cagristore/src/assets/img/FeaturedPosts/featured3.jpeg",
+        image: "/src/assets/img/FeaturedPosts/featured3.jpeg",
         company: "Google",
         trending: "Trending",
         new: "New",

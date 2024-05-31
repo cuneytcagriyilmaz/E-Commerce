@@ -2,10 +2,10 @@ import React from 'react';
 
 const EditorPick = () => {
   const editorPickImages = [
-    '/cagristore/src/assets/img/editorPick/editorPickMenCategory.jpeg',
-    '/cagristoresrc/assets/img/editorPick/editorPickWomenCategory.jpeg',
-    '/cagristore/src/assets/img/editorPick/editorPickAccessoriesCategory.jpeg',
-    '/cagristore/src/assets/img/editorPick/editorPickKidsCategory.jpeg'
+    '/src/assets/img/editorPick/editorPickMenCategory.jpeg',
+    'src/assets/img/editorPick/editorPickWomenCategory.jpeg',
+    '/src/assets/img/editorPick/editorPickAccessoriesCategory.jpeg',
+    '/src/assets/img/editorPick/editorPickKidsCategory.jpeg'
   ];
 
   return (
