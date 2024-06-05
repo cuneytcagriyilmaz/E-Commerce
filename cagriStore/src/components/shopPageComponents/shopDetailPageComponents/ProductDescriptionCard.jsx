@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import BestSellerProducts from '../layout/BestSellerProducts';
 
 function ProductDescriptionCard() {
 

@@ -22,7 +22,7 @@ const ProductDetailSlider = () => {
 
     return (
         <div className="bg-mainBackgroundWhite py-12">
-            <div className="  mx-auto flex flex-col md:flex-row gap-8     p-3    ">
+            <div className="  mx-auto flex flex-col md:flex-row gap-8 p-3  w-[92%]">
                 <div className="md:w-1/2 flex flex-col ">
                     <div className="relative w-full max-w-md h-64 overflow-hidden items-center">
                         <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>

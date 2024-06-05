@@ -1,11 +1,11 @@
 import React from 'react'
 import Header from '../layout/Header'
-import Footer from '../components/Footer'
-import Breadcrumb from '../components/Breadcrumb'
-import BrandLogos from '../components/BrandLogos'
-import ProductDescriptionCard from '../components/ProductDescriptionCard'
+import Footer from '../components/generalComponents/Footer'
+import Breadcrumb from '../components/generalComponents/Breadcrumb'
+import BrandLogos from '../components/contactPageComponents/BrandLogos'
+import ProductDescriptionCard from '../components/shopPageComponents/shopDetailPageComponents/ProductDescriptionCard'
 import BestSellerProducts from '../layout/BestSellerProducts'
-import ProductDetailSlider from '../components/ProductDetailSlider'
+import ProductDetailSlider from '../components/shopPageComponents/shopDetailPageComponents/ProductDetailSlider'
 
 function ProductDetailPage() {
   const products = [

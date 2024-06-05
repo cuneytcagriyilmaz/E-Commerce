@@ -1,9 +1,9 @@
 import React from 'react'
 import Header from '../layout/Header'
-import Footer from '../components/Footer'
-import ContactMeet from '../components/ContactMeet'
-import ContactUs from '../components/ContactUs'
-import ContactBar from '../components/ContactBar'
+import Footer from '../components/generalComponents/Footer'
+import ContactMeet from '../components/contactPageComponents/ContactMeet'
+import ContactUs from '../components/contactPageComponents/ContactUs'
+import ContactBar from '../components/contactPageComponents/ContactBar'
  
 
 function Contact() {

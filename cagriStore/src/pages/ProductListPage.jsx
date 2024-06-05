@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import Header from '../layout/Header'
-import Footer from '../components/Footer'
-import Breadcrumb from '../components/Breadcrumb'
-import ShopCard from '../components/ShopCard'
+import Footer from '../components/generalComponents/Footer'
+import Breadcrumb from '../components/generalComponents/Breadcrumb'
+import ShopCard from '../components/shopPageComponents/ShopCard'
 import BestSellerProducts from '../layout/BestSellerProducts'
-import FilterComponent from '../components/FilterComponent'
-import Pagination from '../components/Pagination'
-import BrandLogos from '../components/BrandLogos'
+import FilterComponent from '../components/shopPageComponents/FilterComponent'
+import Pagination from '../components/shopPageComponents/Pagination'
+import BrandLogos from '../components/contactPageComponents/BrandLogos'
 
 function ProductListPage() {
 

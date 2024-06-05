@@ -16,6 +16,7 @@ export default {
         textColorH2: '#BDBDBD',
         buttonFullBlue: '#23A6F0',
         footerLightGray: '#FAFAFA',
+        aboutRed:'#E74040'
 
 
 

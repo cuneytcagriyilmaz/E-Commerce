@@ -53,7 +53,7 @@ const ProductCard = ({ product, isInsideProductDescription }) => {
 
   return (
     <div onClick={handleClick}>
-            {isInsideProductDescription ? isInsideTrue() : isInsideFalse()}
+      {isInsideProductDescription ? isInsideTrue() : isInsideFalse()}
 
     </div>
   );

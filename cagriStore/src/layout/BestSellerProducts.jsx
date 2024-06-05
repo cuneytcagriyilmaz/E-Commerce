@@ -1,5 +1,5 @@
 
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../components/shopPageComponents/shopDetailPageComponents/ProductCard';
 
 
 //2 ser 2 ser inmesini sagla

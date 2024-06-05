@@ -1,0 +1,23 @@
+import React from 'react'
+import BrandLogos from '../contactPageComponents/BrandLogos'
+
+function AboutUsCompanies() {
+    return (
+        <div className=" bg-mainBackgroundWhite">
+            <div className="flex flex-col text-center md:text-start items-center justify-between p-8 mx-auto w-[92%] relative">
+                <div className="flex-1 text-center ">
+
+
+                    <h4 className=" text-[40px] font-bold mb-4 text-xl text-textColorDarkGray pt-4">Big Companies Are Here</h4>
+                    <p className="mb-4 pt-4 text-[14px]   text-textColorLightGray">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
+
+
+                </div>
+        
+            </div>
+            <BrandLogos />
+        </div>
+    )
+}
+
+export default AboutUsCompanies
