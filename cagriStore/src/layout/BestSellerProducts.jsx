@@ -1,86 +1,53 @@
-import React from 'react';
+
 import ProductCard from '../components/ProductCard';
 
-const products = [
-    {
-        image: "/src/assets/img/bestSellerProduct/1.jpeg",
-        title: "Graphic Design",
-        department: "English Department",
-        originalPrice: 16.48,
-        discountedPrice: 6.48,
-        colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-    },
-    {
-        image: "/src/assets/img/bestSellerProduct/2.jpeg",
-        title: "Graphic Design",
-        department: "English Department",
-        originalPrice: 16.48,
-        discountedPrice: 6.48,
-        colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-    },
-    {
-        image: "/src/assets/img/bestSellerProduct/3.jpeg",
-        title: "Graphic Design",
-        department: "English Department",
-        originalPrice: 16.48,
-        discountedPrice: 6.48,
-        colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-    },
-    {
-        image: "/src/assets/img/bestSellerProduct/4.jpeg",
-        title: "Graphic Design",
-        department: "English Department",
-        originalPrice: 16.48,
-        discountedPrice: 6.48,
-        colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-    },
-    {
-        image: "/src/assets/img/bestSellerProduct/5.jpeg",
-        title: "Graphic Design",
-        department: "English Department",
-        originalPrice: 16.48,
-        discountedPrice: 6.48,
-        colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-    },
-    {
-        image: "/src/assets/img/bestSellerProduct/6.jpeg",
-        title: "Graphic Design",
-        department: "English Department",
-        originalPrice: 16.48,
-        discountedPrice: 6.48,
-        colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-    },
-    {
-        image: "/src/assets/img/bestSellerProduct/7.jpeg",
-        title: "Graphic Design",
-        department: "English Department",
-        originalPrice: 16.48,
-        discountedPrice: 6.48,
-        colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-    },
-    {
-        image: "/src/assets/img/bestSellerProduct/8.jpeg",
-        title: "Graphic Design",
-        department: "English Department",
-        originalPrice: 16.48,
-        discountedPrice: 6.48,
-        colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-    }
-];
 
-function BestSellerProducts() {
-    return (
-        <div className="p-8 max-w-[1800px] mx-auto ">
-            <h2 className="text-lg sm:text-2xl text-textColorLightGray text-center mb-2">Featured Products</h2>
-            <h1 className="text-xl sm:text-4xl text-textColorDarkGray font-bold text-center mb-4">BESTSELLER PRODUCTS</h1>
-            <p className="text-sm sm:text-base text-center text-textColorLightGray mb-8">Problems trying to resolve the conflict between</p>
-            <div className="flex flex-wrap justify-center gap-4">
-                {products.map((product, index) => (
-                    <ProductCard key={index} product={product} />
-                ))}
+//2 ser 2 ser inmesini sagla
+function BestSellerProducts({ products, title, subtitle, description, isInsideProductDescription }) {
+
+    function isInsideTrue() {
+
+        return (
+            <div className='bg-footerLightGray'>
+                <div className="p-8 mx-auto ">
+                    {subtitle && <h1 className="text-xl sm:text-4xl text-textColorDarkGray md:text-start font-bold text-center md:ml-48 md:mr-48 mb-4 border-b-2">{subtitle}</h1>}
+                    <div className="flex flex-wrap justify-center gap-4">
+                        {products.map((product, index) => (
+                            <ProductCard key={index} product={product} isInsideProductDescription={true} />
+                        ))}
+                    </div>
+                </div>
             </div>
+        );
+    };
+
+
+    function isInsideFalse() {
+        return (
+            <div className="p-8 mx-auto">
+                {title && <h2 className="text-lg sm:text-2xl text-textColorLightGray text-center mb-2">{title}</h2>}
+                {subtitle && <h1 className="text-xl sm:text-4xl text-textColorDarkGray font-bold text-center mb-4">{subtitle}</h1>}
+                {(description || description === '') && <p className="text-sm sm:text-base text-center text-textColorLightGray mb-8">{description}</p>}
+                <div className="flex flex-wrap justify-center gap-4">
+                    {products.map((product, index) => (
+                        <ProductCard key={index} product={product} />
+                    ))}
+                </div>
+            </div>
+        );
+    };
+
+
+    return (
+        <div>
+            {isInsideProductDescription ? isInsideTrue() : isInsideFalse()}
+
         </div>
     );
 }
 
+
+
 export default BestSellerProducts;
+
+

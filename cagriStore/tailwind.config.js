@@ -20,6 +20,10 @@ export default {
 
 
       },
+      boxShadow: {
+        'product-description-image-shadow': '15px 15px 25px -1px rgba(0,0,0,0.75);',
+
+      }
     },
   },
   plugins: [],

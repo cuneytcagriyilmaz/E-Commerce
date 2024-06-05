@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 function FirstHeader() {
     return (
         <header className="bg-gray-800 hidden lg:block">
-            
+
             <div className="px-4 py-2 justify-between flex items-center w-[92%] mx-auto">
                 <div className="flex items-center space-x-4">
                     <span className="text-white text-sm">

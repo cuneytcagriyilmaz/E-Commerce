@@ -9,10 +9,10 @@ const EditorPick = () => {
   ];
 
   return (
-    <div className="flex items-center flex-col justify-center pt-6 bg-mainBackgroundWhite">
+    <div className="flex items-center flex-col justify-center pt-6 bg-mainBackgroundWhite   ">
       <h1 className="text-2xl font-bold mb-1 text-gray-800">EDITOR'S PICK</h1>
       <p className="text-gray-600 mb-4">Problems trying to resolve the conflict between</p>
-      <div className="flex w-3/4 gap-4 px-4 flex-col md:flex-row">
+      <div className="flex   gap-4 px-4 flex-col md:flex-row">
         <div className="relative p-4 w-full md:w-1/2">
           <img src={editorPickImages[0]} className="w-full h-auto md:h-full object-cover" alt="Men" />
           <button className="absolute bottom-8 left-8 pl-10 pr-10 bg-white text-black px-4 py-2">MEN</button>

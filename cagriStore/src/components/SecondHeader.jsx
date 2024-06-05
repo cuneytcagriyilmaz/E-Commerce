@@ -6,12 +6,14 @@ const menuItems = [
     { name: 'Shop', to: '#' },
     { name: 'Pricing', to: '/pricing' },
     { name: 'Contact', to: '/contact' },
+    { name: 'Abuout Us', to: '/aboutus' },
     { name: 'Pages', to: '/pages' },
 ];
 
 const dropdownItems = [
     {
         category: 'Kadın', items: [
+            { name: 'Shop', to: '/shop' },
             { name: 'Tişört', to: '/shop/kadin/tisort' },
             { name: 'Ayakkabı', to: '/shop/kadin/ayakkabi' },
             { name: 'Ceket', to: '/shop/kadin/ceket' },
@@ -58,7 +60,7 @@ const SecondHeader = () => {
     );
 
     return (
-        <header className="bg-white mt-6 relative z-10">
+        <header className="bg-white mt-6 relative z-10 mb-4">
 
             <div className="px-4  justify-between flex items-center w-[92%] mx-auto">
 

@@ -10,7 +10,7 @@ function Header() {
     <header>
       <FirstHeader />
       <SecondHeader />
-      <Carousel  />
+      {/* <Carousel  /> */}
     </header>
   );
 }
