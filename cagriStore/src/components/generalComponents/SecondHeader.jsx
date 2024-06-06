@@ -7,6 +7,7 @@ const menuItems = [
     { name: 'Pricing', to: '/pricing' },
     { name: 'Contact', to: '/contact' },
     { name: 'Abuout Us', to: '/aboutus' },
+    { name: 'Team', to: '/team' },
     { name: 'Pages', to: '/pages' },
 ];
 

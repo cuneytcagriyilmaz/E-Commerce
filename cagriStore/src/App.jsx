@@ -5,6 +5,7 @@ import ProductListPage from './pages/ProductListPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import Contact from './pages/Contact';
 import AboutUs from './pages/AboutUs';
+import Team from './pages/Team';
 
 function App() {
   return (
@@ -16,12 +17,9 @@ function App() {
           <Route path="/shop/:id" component={ProductDetailPage} />
           <Route path="/contact" component={Contact} />
           <Route path="/aboutus" component={AboutUs} />
+          <Route path="/team" component={Team} />
 
-          {/* <Route path="/shop" component={Shop} />
-          <Route path="/about" component={About} />
-          <Route path="/blog" component={Blog} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/pages" component={Pages} /> */}
+
         </Switch>
       </div>
     </Router>

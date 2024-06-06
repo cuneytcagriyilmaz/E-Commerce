@@ -20,6 +20,7 @@ export default {
         facebookIconBlue: '#335BF5',
         instagramIconRed: '#E51F5A',
         twitterIconBlue: '#21A6DF',
+        linkedinIconBlue:'#0A66C2',
         aboutUsLastHeaderColour: '#2A7CC7'
 
 
