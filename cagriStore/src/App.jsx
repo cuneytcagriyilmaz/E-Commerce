@@ -6,6 +6,7 @@ import ProductDetailPage from './pages/ProductDetailPage';
 import Contact from './pages/Contact';
 import AboutUs from './pages/AboutUs';
 import Team from './pages/Team';
+import Pricing from './pages/Pricing';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/contact" component={Contact} />
           <Route path="/aboutus" component={AboutUs} />
           <Route path="/team" component={Team} />
+          <Route path="/pricing" component={Pricing} />
 
 
         </Switch>
