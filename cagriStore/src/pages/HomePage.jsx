@@ -6,7 +6,7 @@ import Slider from '../components/generalComponents/Slider'
 import HomeContainerFluid from '../layout/HomeContainerFluid'
 import Footer from '../components/generalComponents/Footer'
 import FeaturedPosts from '../layout/FeaturedPosts'
-import Carousel from '../components/Carousel'
+import Carousel from '../components/HomePageComponents/Carousel'
 
 function HomePage() {
     const products = [

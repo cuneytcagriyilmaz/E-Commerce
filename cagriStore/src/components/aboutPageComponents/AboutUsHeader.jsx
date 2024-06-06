@@ -5,11 +5,11 @@ const AboutUsHeader = () => {
     return (
         <div className="flex flex-col md:flex-row text-center md:text-start items-center justify-between p-8 mx-auto w-[92%] bg-white relative">
             <div className="flex-1  ">
-                <h4 className="  font-bold mb-4 text-textColorDarkGray pt-4">ABOUT COMPANY</h4>
+                <h4 className="  font-bold mb-4 text-textColorDarkGray pt-4 hidden md:block">ABOUT COMPANY</h4>
                 <h2 className="text-4xl font-bold mb-4 pt-4 text-textColorDarkGray ">ABOUT US</h2>
                 <p className="mb-4 pt-4 text-textColorLightGray">We know how large objects will act, but things on a small scale</p>
 
-                <div className="flex space-x-4  pt-4 justify-center text-textColorDarkGray md:justify-start">
+                <div className="flex space-x-4  pt-4 pb-4 justify-center text-textColorDarkGray md:justify-start">
                     <button className="bg-navbarLigthBlue text-white px-6 py-2 rounded-lg font-semibold">
                         Get Quote Now
                     </button>

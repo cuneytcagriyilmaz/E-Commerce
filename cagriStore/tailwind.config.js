@@ -16,7 +16,12 @@ export default {
         textColorH2: '#BDBDBD',
         buttonFullBlue: '#23A6F0',
         footerLightGray: '#FAFAFA',
-        aboutRed:'#E74040'
+        aboutRed: '#E74040',
+        facebookIconBlue: '#335BF5',
+        instagramIconRed: '#E51F5A',
+        twitterIconBlue: '#21A6DF',
+        aboutUsLastHeaderColour: '#2A7CC7'
+
 
 
 

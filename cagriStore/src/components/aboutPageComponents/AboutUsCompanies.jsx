@@ -8,12 +8,12 @@ function AboutUsCompanies() {
                 <div className="flex-1 text-center ">
 
 
-                    <h4 className=" text-[40px] font-bold mb-4 text-xl text-textColorDarkGray pt-4">Big Companies Are Here</h4>
+                    <h4 className=" text-[40px] font-bold  text-textColorDarkGray pt-4">Big Companies Are Here</h4>
                     <p className="mb-4 pt-4 text-[14px]   text-textColorLightGray">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
 
 
                 </div>
-        
+
             </div>
             <BrandLogos />
         </div>
