@@ -2,10 +2,10 @@ import React from 'react';
 
 const EditorPick = () => {
   const editorPickImages = [
-    '/src/assets/img/editorPick/editorPickMenCategory.jpeg',
-    'src/assets/img/editorPick/editorPickWomenCategory.jpeg',
-    '/src/assets/img/editorPick/editorPickAccessoriesCategory.jpeg',
-    '/src/assets/img/editorPick/editorPickKidsCategory.jpeg'
+    'img/editorPick/editorPickMenCategory.jpeg',
+    'img/editorPick/editorPickWomenCategory.jpeg',
+    'img/editorPick/editorPickAccessoriesCategory.jpeg',
+    'img/editorPick/editorPickKidsCategory.jpeg'
   ];
 
   return (

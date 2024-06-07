@@ -20,7 +20,7 @@ function HomeContainerFluid() {
                     </button>
                 </div>
                 <div className="relative">
-                    <img src='src/assets/img/homeContainerFluid/homeContainerFluid.png' alt="ContainerFluid" className="h-4/5 w-full object-cover" />
+                    <img src='img/homeContainerFluid/homeContainerFluid.png' alt="ContainerFluid" className="h-4/5 w-full object-cover" />
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@ function HomeContainerFluid() {
         <div className="pt-16 pb-2 flex flex-col items-center justify-center bg-mainBackgroundWhite">
             <div className="flex flex-row items-center justify-center">
                 <div className="pt-6 relative w-1/2 flex items-center justify-center">
-                    <img src='src/assets/img/homeContainerFluid/homeContainerFluid.png' className="h-full object-cover" />
+                    <img src='img/homeContainerFluid/homeContainerFluid.png' className="h-full object-cover" />
                 </div>
                 <div className="p-6 text-white justify-start text-left w-1/2">
                     <p className="text-sm text-textColorH2">SUMMER 2020</p>

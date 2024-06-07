@@ -3,7 +3,7 @@ import BrandLogos from '../contactPageComponents/BrandLogos'
 
 function AboutUsCompanies() {
     return (
-        <div className=" bg-mainBackgroundWhite">
+        <div className=" bg-mainBackgroundWhite pb-16">
             <div className="flex flex-col text-center md:text-start items-center justify-between p-8 mx-auto w-[92%] relative">
                 <div className="flex-1 text-center ">
 

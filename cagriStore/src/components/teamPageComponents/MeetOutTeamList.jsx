@@ -6,47 +6,47 @@ const teamMembers = [
     {
         username: "username",
         profession: "Profession",
-        imageUrl: "src/assets/img/teamPage/m1.jpeg",
+        imageUrl: "img/teamPage/m1.jpeg",
     },
     {
         username: "username",
         profession: "Profession",
-        imageUrl: "src/assets/img/teamPage/m2.jpeg",
+        imageUrl: "img/teamPage/m2.jpeg",
     },
     {
         username: "username",
         profession: "Profession",
-        imageUrl: "src/assets/img/teamPage/m3.jpeg",
+        imageUrl: "img/teamPage/m3.jpeg",
     },
     {
         username: "username",
         profession: "Profession",
-        imageUrl: "src/assets/img/teamPage/m4.jpeg",
+        imageUrl: "img/teamPage/m4.jpeg",
     },
     {
         username: "username",
         profession: "Profession",
-        imageUrl: "src/assets/img/teamPage/m5.jpeg",
+        imageUrl: "img/teamPage/m5.jpeg",
     },
     {
         username: "username",
         profession: "Profession",
-        imageUrl: "src/assets/img/teamPage/m6.jpeg",
+        imageUrl: "img/teamPage/m6.jpeg",
     },
     {
         username: "username",
         profession: "Profession",
-        imageUrl: "src/assets/img/teamPage/m7.jpeg",
+        imageUrl: "img/teamPage/m7.jpeg",
     },
     {
         username: "username",
         profession: "Profession",
-        imageUrl: "src/assets/img/teamPage/m8.jpeg",
+        imageUrl: "img/teamPage/m8.jpeg",
     },
     {
         username: "username",
         profession: "Profession",
-        imageUrl: "src/assets/img/teamPage/m9.jpeg",
+        imageUrl: "img/teamPage/m9.jpeg",
     },
 
 ];

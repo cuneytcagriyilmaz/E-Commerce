@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 
 
 const imageUrls = [
-    '/src/assets/img/header/ContainerFluidCarouselHeroFirst.png',
-    '/src/assets/img/header/ContainerFluidCarouselHeroFirst.png',
+    'img/header/ContainerFluidCarouselHeroFirst.png',
+    'img/header/ContainerFluidCarouselHeroFirst.png',
 
 ]
 

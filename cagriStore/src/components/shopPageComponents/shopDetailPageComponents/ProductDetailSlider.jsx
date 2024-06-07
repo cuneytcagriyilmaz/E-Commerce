@@ -4,8 +4,8 @@ const ProductDetailSlider = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const images = [
-        "/src/assets/img/productCardsShop/productCardsShop11.jpeg",
-        "/src/assets/img/productCardsShop/productCardsShop1.jpeg",
+        "img/productCardsShop/productCardsShop11.jpeg",
+        "img/productCardsShop/productCardsShop1.jpeg",
     ];
 
     const showSlide = (index) => {

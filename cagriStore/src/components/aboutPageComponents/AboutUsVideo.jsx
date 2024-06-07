@@ -5,8 +5,8 @@ function AboutUsVideo() {
     const mediaData = [
         {
             id: 1,
-            videoSrc: '/src/assets/img/aboutUs/video.mp4',
-            placeholderImg: 'src/assets/img/aboutUs/aboutUsVideo.jpeg',
+            videoSrc: 'img/aboutUs/video.mp4',
+            placeholderImg: 'img/aboutUs/aboutUsVideo.jpeg',
         }
     ];
 

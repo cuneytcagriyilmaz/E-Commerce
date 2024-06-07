@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselImages = [
-    { url: '/src/assets/img/header/headerCarouseFirst.jpeg', alt: 'Image 1', description: 'We know how large objects will act, but things on a small scale.' },
+    { url: 'img/header/headerCarouseFirst.jpeg', alt: 'Image 1', description: 'We know how large objects will act, but things on a small scale.' },
     { url: 'https://picsum.photos/id/238/1200/600', alt: 'Image 2', description: 'We focus on ergonomics and meeting you where you work. It\'s only a keystroke away.' },
   ];
 

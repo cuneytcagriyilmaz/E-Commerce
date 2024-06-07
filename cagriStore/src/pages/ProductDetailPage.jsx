@@ -11,7 +11,7 @@ function ProductDetailPage() {
   const products = [
     {
       id: 1,
-      image: "/src/assets/img/productCardsShop/productCardsShop1.jpeg",
+      image: "img/productCardsShop/productCardsShop1.jpeg",
       title: "Graphic Design",
       department: "English Department",
       originalPrice: 16.48,
@@ -20,7 +20,7 @@ function ProductDetailPage() {
     },
     {
       id: 2,
-      image: "/src/assets/img/productCardsShop/productCardsShop2.jpeg",
+      image: "img/productCardsShop/productCardsShop2.jpeg",
       title: "Graphic Design",
       department: "English Department",
       originalPrice: 16.48,
@@ -29,7 +29,7 @@ function ProductDetailPage() {
     },
     {
       id: 3,
-      image: "/src/assets/img/productCardsShop/productCardsShop3.jpeg",
+      image: "img/productCardsShop/productCardsShop3.jpeg",
       title: "Graphic Design",
       department: "English Department",
       originalPrice: 16.48,
@@ -38,7 +38,7 @@ function ProductDetailPage() {
     },
     {
       id: 4,
-      image: "/src/assets/img/productCardsShop/productCardsShop4.jpeg",
+      image: "img/productCardsShop/productCardsShop4.jpeg",
       title: "Graphic Design",
       department: "English Department",
       originalPrice: 16.48,
@@ -47,7 +47,7 @@ function ProductDetailPage() {
     },
     {
       id: 5,
-      image: "/src/assets/img/productCardsShop/productCardsShop5.jpeg",
+      image: "img/productCardsShop/productCardsShop5.jpeg",
       title: "Graphic Design",
       department: "English Department",
       originalPrice: 16.48,
@@ -56,7 +56,7 @@ function ProductDetailPage() {
     },
     {
       id: 6,
-      image: "/src/assets/img/productCardsShop/productCardsShop6.jpeg",
+      image: "img/productCardsShop/productCardsShop6.jpeg",
       title: "Graphic Design",
       department: "English Department",
       originalPrice: 16.48,
@@ -65,7 +65,7 @@ function ProductDetailPage() {
     },
     {
       id: 7,
-      image: "/src/assets/img/productCardsShop/productCardsShop7.jpeg",
+      image: "img/productCardsShop/productCardsShop7.jpeg",
       title: "Graphic Design",
       department: "English Department",
       originalPrice: 16.48,
@@ -74,7 +74,7 @@ function ProductDetailPage() {
     },
     {
       id: 8,
-      image: "/src/assets/img/productCardsShop/productCardsShop8.jpeg",
+      image: "img/productCardsShop/productCardsShop8.jpeg",
       title: "Graphic Design",
       department: "English Department",
       originalPrice: 16.48,
@@ -83,7 +83,7 @@ function ProductDetailPage() {
     },
     {
       id: 9,
-      image: "/src/assets/img/productCardsShop/productCardsShop9.jpeg",
+      image: "img/productCardsShop/productCardsShop9.jpeg",
       title: "Graphic Design",
       department: "English Department",
       originalPrice: 16.48,
@@ -92,7 +92,7 @@ function ProductDetailPage() {
     },
     {
       id: 10,
-      image: "/src/assets/img/productCardsShop/productCardsShop10.jpeg",
+      image: "img/productCardsShop/productCardsShop10.jpeg",
       title: "Graphic Design",
       department: "English Department",
       originalPrice: 16.48,
@@ -101,7 +101,7 @@ function ProductDetailPage() {
     },
     {
       id: 11,
-      image: "/src/assets/img/productCardsShop/productCardsShop11.jpeg",
+      image: "img/productCardsShop/productCardsShop11.jpeg",
       title: "Graphic Design",
       department: "English Department",
       originalPrice: 16.48,
@@ -110,7 +110,7 @@ function ProductDetailPage() {
     },
     {
       id: 12,
-      image: "/src/assets/img/productCardsShop/productCardsShop12.jpeg",
+      image: "img/productCardsShop/productCardsShop12.jpeg",
       title: "Graphic Design",
       department: "English Department",
       originalPrice: 16.48,

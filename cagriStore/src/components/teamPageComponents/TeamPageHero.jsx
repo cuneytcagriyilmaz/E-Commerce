@@ -1,11 +1,11 @@
 import React from 'react';
 
 const images = [
-    'src/assets/img/teamPage/1.jpeg',
-    'src/assets/img/teamPage/2.jpeg',
-    'src/assets/img/teamPage/3.jpeg',
-    'src/assets/img/teamPage/4.jpeg',
-    'src/assets/img/teamPage/5.jpeg',
+    'img/teamPage/1.jpeg',
+    'img/teamPage/2.jpeg',
+    'img/teamPage/3.jpeg',
+    'img/teamPage/4.jpeg',
+    'img/teamPage/5.jpeg',
 ];
 
 function TeamPageHero() {

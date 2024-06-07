@@ -11,7 +11,7 @@ import Carousel from '../components/HomePageComponents/Carousel'
 function HomePage() {
     const products = [
         {
-            image: "/src/assets/img/bestSellerProduct/1.jpeg",
+            image: "img/bestSellerProduct/1.jpeg",
             title: "Graphic Design",
             department: "English Department",
             originalPrice: 16.48,
@@ -19,7 +19,7 @@ function HomePage() {
             colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
         },
         {
-            image: "/src/assets/img/bestSellerProduct/2.jpeg",
+            image: "img/bestSellerProduct/2.jpeg",
             title: "Graphic Design",
             department: "English Department",
             originalPrice: 16.48,
@@ -27,7 +27,7 @@ function HomePage() {
             colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
         },
         {
-            image: "/src/assets/img/bestSellerProduct/3.jpeg",
+            image: "img/bestSellerProduct/3.jpeg",
             title: "Graphic Design",
             department: "English Department",
             originalPrice: 16.48,
@@ -35,7 +35,7 @@ function HomePage() {
             colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
         },
         {
-            image: "/src/assets/img/bestSellerProduct/4.jpeg",
+            image: "img/bestSellerProduct/4.jpeg",
             title: "Graphic Design",
             department: "English Department",
             originalPrice: 16.48,
@@ -43,7 +43,7 @@ function HomePage() {
             colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
         },
         {
-            image: "/src/assets/img/bestSellerProduct/5.jpeg",
+            image: "img/bestSellerProduct/5.jpeg",
             title: "Graphic Design",
             department: "English Department",
             originalPrice: 16.48,
@@ -51,7 +51,7 @@ function HomePage() {
             colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
         },
         {
-            image: "/src/assets/img/bestSellerProduct/6.jpeg",
+            image: "img/bestSellerProduct/6.jpeg",
             title: "Graphic Design",
             department: "English Department",
             originalPrice: 16.48,
@@ -59,7 +59,7 @@ function HomePage() {
             colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
         },
         {
-            image: "/src/assets/img/bestSellerProduct/7.jpeg",
+            image: "img/bestSellerProduct/7.jpeg",
             title: "Graphic Design",
             department: "English Department",
             originalPrice: 16.48,
@@ -67,7 +67,7 @@ function HomePage() {
             colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
         },
         {
-            image: "/src/assets/img/bestSellerProduct/8.jpeg",
+            image: "img/bestSellerProduct/8.jpeg",
             title: "Graphic Design",
             department: "English Department",
             originalPrice: 16.48,
