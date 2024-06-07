@@ -22,7 +22,8 @@ export default {
         lightBluePricing: '#8EC2F2',
         linkedinIconBlue: '#0A66C2',
         aboutUsLastHeaderColour: '#2A7CC7',
-        saveBColor: '#B2E3FF'
+        saveBColor: '#B2E3FF',
+        navbarLigthBlue:'#23A6F0'
 
 
 
