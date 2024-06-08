@@ -83,7 +83,7 @@ const SecondHeader = () => {
                 </div>
                 <div className="flex items-center gap-2">
                     <i className="fas fa-user hidden md:block text-navbarLigthBlue cursor-pointer"></i>
-                    <Link to="/login" className="hidden md:block text-navbarLigthBlue hover:underline">
+                    <Link to="/signup" className="hidden md:block text-navbarLigthBlue hover:underline">
                         Login / Register
                     </Link>
                     <div className="items-end"></div>

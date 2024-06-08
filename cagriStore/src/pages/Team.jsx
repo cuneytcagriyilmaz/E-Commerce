@@ -6,6 +6,13 @@ import MeetOutTeamList from '../components/teamPageComponents/MeetOutTeamList'
 import Footer from '../components/generalComponents/Footer'
 import FreeTrial from '../components/generalComponents/FreeTrial'
 
+/**
+ * 
+ * 
+ * shop'U AYARLA
+ * SLIDER'I AYARLA IKINCI FITIYU BUL.
+ * SIGN UP ICIN BOŞ BIRSEY AYARLA
+ */
 function Team() {
   return (
     <div>

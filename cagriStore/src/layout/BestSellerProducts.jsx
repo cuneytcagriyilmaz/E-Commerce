@@ -2,7 +2,7 @@
 import ProductCard from '../components/shopPageComponents/shopDetailPageComponents/ProductCard';
 
 
-//2 ser 2 ser inmesini sagla
+
 function BestSellerProducts({ products, title, subtitle, description, isInsideProductDescription }) {
 
     function isInsideTrue() {
