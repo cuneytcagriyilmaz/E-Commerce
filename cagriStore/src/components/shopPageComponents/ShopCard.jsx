@@ -2,27 +2,27 @@ import React from 'react';
 
 const shopItems = [
     {
-        image: "img/desktopShopCard/shopCard1.jpeg",
+        image: "/img/desktopShopCard/shopCard1.jpeg",
         title: "CLOTHS",
         description: "5 Item"
     },
     {
-        image: "img/desktopShopCard/shopCard2.jpeg",
+        image: "/img/desktopShopCard/shopCard2.jpeg",
         title: "CLOTHS",
         description: "5 Item"
     },
     {
-        image: "img/desktopShopCard/shopCard3.jpeg",
+        image: "/img/desktopShopCard/shopCard3.jpeg",
         title: "CLOTHS",
         description: "5 Item"
     },
     {
-        image: "img/desktopShopCard/shopCard4.jpeg",
+        image: "/img/desktopShopCard/shopCard4.jpeg",
         title: "CLOTHS",
         description: "5 Item"
     },
     {
-        image: "img/desktopShopCard/shopCard5.jpeg",
+        image: "/img/desktopShopCard/shopCard5.jpeg",
         title: "CLOTHS",
         description: "5 Item"
     }

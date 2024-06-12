@@ -1,12 +1,16 @@
-import { useState } from 'react';
+ 
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import Gravatar from 'react-gravatar';  
+import { setUser } from '../../store/actions/clientActions';
 
 const menuItems = [
     { name: 'Home', to: '/' },
     { name: 'Shop', to: '#' },
     { name: 'Pricing', to: '/pricing' },
     { name: 'Contact', to: '/contact' },
-    { name: 'Abuout Us', to: '/aboutus' },
+    { name: 'About Us', to: '/aboutus' },
     { name: 'Team', to: '/team' },
     { name: 'Pages', to: '/pages' },
 ];
@@ -40,11 +44,18 @@ const dropdownItems = [
 const SecondHeader = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isShopDropDownOpen, setIsShopDropDownOpen] = useState(false);
+    const user = useSelector(state => state.client.user);
+    const dispatch = useDispatch();
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
     const toggleShopDropdown = (e) => {
         e.preventDefault();
         setIsShopDropDownOpen(!isShopDropDownOpen);
+    };
+
+    const handleLogout = () => {
+        dispatch(setUser(null));
+        localStorage.removeItem('token');
     };
 
     const renderDropdown = () => (
@@ -62,9 +73,7 @@ const SecondHeader = () => {
 
     return (
         <header className="bg-white mt-6 relative z-10 mb-4">
-
-            <div className="px-4  justify-between flex items-center w-[92%] mx-auto">
-
+            <div className="px-4 justify-between flex items-center w-[92%] mx-auto">
                 <div className='flex items-center space-x-28'>
                     <Link to="/" className="font-bold text-xl">Bandage</Link>
                     <nav className="hidden md:flex space-x-6 items-center relative">
@@ -82,10 +91,18 @@ const SecondHeader = () => {
                     </nav>
                 </div>
                 <div className="flex items-center gap-2">
-                    <i className="fas fa-user hidden md:block text-navbarLigthBlue cursor-pointer"></i>
-                    <Link to="/signup" className="hidden md:block text-navbarLigthBlue hover:underline">
-                        Login / Register
-                    </Link>
+                    {user ? (
+                        <div className="flex items-center gap-2">
+                            <Gravatar email={user.email} size={32} className="rounded-full" />  
+                            <span className="text-navbarLigthBlue">{user.name}</span>
+                            <button className="text-navbarLigthBlue hover:underline" onClick={handleLogout}>Logout</button>
+                        </div>
+                    ) : (
+                        <>
+                            <i className="fas fa-user hidden md:block text-navbarLigthBlue cursor-pointer"></i>
+                            <Link to="/signup" className="hidden md:block text-navbarLigthBlue hover:underline">Login / Register</Link>
+                        </>
+                    )}
                     <div className="items-end"></div>
                     <i className="fas fa-search text-gray-700 md:text-navbarLigthBlue cursor-pointer"></i>
                     <i className="fas fa-shopping-cart text-gray-700 md:text-navbarLigthBlue cursor-pointer"></i>
@@ -123,7 +140,6 @@ const SecondHeader = () => {
                     </div>
                 </div>
             )}
-
         </header>
     );
 };

@@ -5,10 +5,9 @@ import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
+import { axiosInstance } from '../../store/api/axiosInstance'
 
-const axiosInstance = axios.create({
-  baseURL: "https://workintech-fe-ecommerce.onrender.com",
-});
+
 
 const Tooltip = ({ message }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -183,11 +182,12 @@ const SignupForm = () => {
           {...register("role_id", { required: "Role is required" })}
           className="block w-full border rounded px-2 py-1 mt-1"
         >
-          {roles.map((role) => (
+          {roles.slice().reverse().map((role) => (
             <option key={role.id} value={role.code}>
               {role.name}
             </option>
           ))}
+
         </select>
         {errors.role_id && (
           <p className="text-red-500">{errors.role_id.message}</p>
@@ -290,6 +290,7 @@ const SignupForm = () => {
           Log in
         </Link>
       </p>
+
     </form>
   );
 };

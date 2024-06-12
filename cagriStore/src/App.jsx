@@ -10,6 +10,7 @@ import AboutUs from './pages/AboutUs';
 import Team from './pages/Team';
 import Pricing from './pages/Pricing';
 import SignUpPage from './pages/SignUpPage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/team" component={Team} />
           <Route path="/pricing" component={Pricing} />
           <Route path="/signup" component={SignUpPage} />
+          <Route path="/login" component={LoginPage} />
         </Switch>
         <ToastContainer /> {/* Toastify bileşenini ekleyin */}
       </div>

@@ -7,75 +7,11 @@ import HomeContainerFluid from '../layout/HomeContainerFluid'
 import Footer from '../components/generalComponents/Footer'
 import FeaturedPosts from '../layout/FeaturedPosts'
 import Carousel from '../components/HomePageComponents/Carousel'
+import { useSelector } from 'react-redux'
 
 function HomePage() {
-    const products = [
-        {
-            image: "img/bestSellerProduct/1.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            image: "img/bestSellerProduct/2.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            image: "img/bestSellerProduct/3.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            image: "img/bestSellerProduct/4.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            image: "img/bestSellerProduct/5.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            image: "img/bestSellerProduct/6.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            image: "img/bestSellerProduct/7.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            image: "img/bestSellerProduct/8.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        }
+    const products = useSelector((store) => store.product.productList);
 
-    ];
 
     return (
         <div>

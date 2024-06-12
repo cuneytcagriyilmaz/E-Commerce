@@ -1,126 +1,16 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useSelector } from "react-redux";
 
 function ProductDescriptionCard() {
 
-    const products = [
-        {
-            id: 1,
-            image: "img/productCardsShop/productCardsShop1.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            id: 2,
-            image: "img/productCardsShop/productCardsShop2.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            id: 3,
-            image: "img/productCardsShop/productCardsShop3.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            id: 4,
-            image: "img/productCardsShop/productCardsShop4.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            id: 5,
-            image: "img/productCardsShop/productCardsShop5.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            id: 6,
-            image: "img/productCardsShop/productCardsShop6.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            id: 7,
-            image: "img/productCardsShop/productCardsShop7.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            id: 8,
-            image: "img/productCardsShop/productCardsShop8.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            id: 9,
-            image: "img/productCardsShop/productCardsShop9.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            id: 10,
-            image: "img/productCardsShop/productCardsShop10.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            id: 11,
-            image: "img/productCardsShop/productCardsShop11.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
-        {
-            id: 12,
-            image: "img/productCardsShop/productCardsShop12.jpeg",
-            title: "Graphic Design",
-            department: "English Department",
-            originalPrice: 16.48,
-            discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        }
-
-    ];
-
+    const products = useSelector((state) => state.product.productList);
     const params = useParams();
-    // console.log(params);
+    console.log(params);
     const productId = Number(params.id);
-    // console.log(productId);
+    console.log(productId);
     const product = products.find(item => item.id === productId);
-    // console.log(product)
+    console.log(product.image)
 
 
 
