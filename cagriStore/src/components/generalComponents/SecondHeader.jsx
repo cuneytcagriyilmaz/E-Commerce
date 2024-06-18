@@ -166,7 +166,6 @@
 // const dropdownItems = [
 //     {
 //         category: 'Kadın', items: [
-//             // { name: 'Shop', to: '/shop' },
 //             { name: 'Tişört', to: '/shop/kadin/tisort' },
 //             { name: 'Ayakkabı', to: '/shop/kadin/ayakkabi' },
 //             { name: 'Ceket', to: '/shop/kadin/ceket' },
@@ -195,48 +194,9 @@
 //     const user = useSelector(state => state.client.user);
 //     const dispatch = useDispatch();
 
-//     useEffect(() => {
-//         const token = localStorage.getItem('token');
-//         console.log("Initial token from localStorage:", token);
-
-//         if (token) {
-//             axios.defaults.headers.common['Authorization'] = token;
-//             console.log("Token set in axios headers:", axios.defaults.headers.common['Authorization']);
-
-//             axios.get('/verify')
-//                 .then(response => {
-//                     console.log("Response from /verify:", response.data);
-//                     if (response.data && response.data.token) {
-//                         const userData = {
-//                             name: response.data.name,
-//                             email: response.data.email,
-//                             role_id: response.data.role_id,
-//                         };
-//                         dispatch(setUser(userData));
-//                         localStorage.setItem('token', response.data.token);
-//                         axios.defaults.headers.common['Authorization'] = response.data.token;
-//                         console.log("New token set in localStorage and axios headers:", response.data.token);
-//                     } else {
-//                         console.error("Invalid response data:", response.data);
-//                         handleInvalidToken();
-//                     }
-//                 })
-//                 .catch(error => {
-//                     console.error("Token verification failed:", error);
-//                     handleInvalidToken();
-//                 });
-//         }
-//     }, [dispatch]);
-
-//     const handleInvalidToken = () => {
-//         localStorage.removeItem('token');
-//         delete axios.defaults.headers.common['Authorization'];
-//         dispatch(setUser(null));
-//     };
-
 //     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 //     const toggleShopDropdown = (e) => {
-//         e.preventDefault();
+//         e.stopPropagation();
 //         setIsShopDropDownOpen(!isShopDropDownOpen);
 //     };
 
@@ -267,12 +227,12 @@
 //                     <nav className="hidden md:flex space-x-6 items-center relative">
 //                         {menuItems.map((item) => (
 //                             <div key={item.name} className="relative">
-//                                 <Link to={item.to} className="text-gray-500 hover:text-gray-700" onClick={item.name === 'Shop' ? toggleShopDropdown : undefined}>
+//                                 <Link to={item.to} className="text-gray-500 hover:text-gray-700">
 //                                     {item.name}
-//                                     {item.name === 'Shop' && (
-//                                         <i className={`ml-2 fas fa-chevron-${isShopDropDownOpen ? 'up' : 'down'}`}></i>
-//                                     )}
 //                                 </Link>
+//                                 {item.name === 'Shop' && (
+//                                     <i className={`ml-2 fas fa-chevron-${isShopDropDownOpen ? 'up' : 'down'} cursor-pointer`} onClick={toggleShopDropdown}></i>
+//                                 )}
 //                                 {item.name === 'Shop' && isShopDropDownOpen && renderDropdown()}
 //                             </div>
 //                         ))}
@@ -333,12 +293,26 @@
 // };
 
 // export default SecondHeader;
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from '../../store/api/loginConfig';
 import Gravatar from 'react-gravatar';
 import { setUser } from '../../store/actions/clientActions';
+import { fetchCategories } from '../../store/actions/categoryActions';
+import LoadingSpinner from '../../layout/LoadingSpinner'
 
 const menuItems = [
     { name: 'Home', to: '/' },
@@ -350,36 +324,22 @@ const menuItems = [
     { name: 'Pages', to: '/pages' },
 ];
 
-const dropdownItems = [
-    {
-        category: 'Kadın', items: [
-            { name: 'Tişört', to: '/shop/kadin/tisort' },
-            { name: 'Ayakkabı', to: '/shop/kadin/ayakkabi' },
-            { name: 'Ceket', to: '/shop/kadin/ceket' },
-            { name: 'Elbise', to: '/shop/kadin/elbise' },
-            { name: 'Etek', to: '/shop/kadin/etek' },
-            { name: 'Gömlek', to: '/shop/kadin/gomlek' },
-            { name: 'Kazak', to: '/shop/kadin/kazak' },
-            { name: 'Pantolon', to: '/shop/kadin/pantolon' },
-        ]
-    },
-    {
-        category: 'Erkek', items: [
-            { name: 'Ayakkabı', to: '/shop/erkek/ayakkabi' },
-            { name: 'Ceket', to: '/shop/erkek/ceket' },
-            { name: 'Gömlek', to: '/shop/erkek/gomlek' },
-            { name: 'Kazak', to: '/shop/erkek/kazak' },
-            { name: 'Pantolon', to: '/shop/erkek/pantolon' },
-            { name: 'Tişört', to: '/shop/erkek/tisort' },
-        ]
-    },
-];
-
 const SecondHeader = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isShopDropDownOpen, setIsShopDropDownOpen] = useState(false);
+    const [loading, setLoading] = useState(true);  
     const user = useSelector(state => state.client.user);
+    const categories = useSelector(state => state.categories.categories);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchCategories())
+            .then(() => setLoading(false))  
+            .catch(error => {
+                console.error('Error fetching categories:', error);
+                setLoading(false);  
+            });
+    }, [dispatch]);
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
     const toggleShopDropdown = (e) => {
@@ -393,21 +353,41 @@ const SecondHeader = () => {
         delete axios.defaults.headers.common['Authorization'];
     };
 
-    const renderDropdown = () => (
-        <div className="bg-white shadow-md absolute mt-2 w-auto rounded-md py-2 text-gray-700 flex">
-            {dropdownItems.map((dropdown) => (
-                <div key={dropdown.category} className="mr-4">
-                    <h3 className="font-semibold">{dropdown.category}</h3>
-                    {dropdown.items.map((item) => (
-                        <Link key={item.to} to={item.to} className="block px-4 py-2 hover:bg-gray-100">{item.name}</Link>
+    const renderDropdown = () => {
+        if (!categories || categories.length === 0) {
+            return null; 
+        }
+    
+        const kadınCategories = categories.filter(category => category.code.startsWith('k:'));
+        const erkekCategories = categories.filter(category => category.code.startsWith('e:'));
+    
+        return (
+            <div className="bg-white shadow-md absolute mt-2 w-auto rounded-md py-2 text-gray-700 flex">
+                <div className="mr-4">
+                    <h3 className="font-semibold text-center">Kadın</h3>
+                    {kadınCategories.map((category) => (
+                        <Link key={category.id} to={`/shop/${category.code.split(':')[1]}`} className="block px-4 py-2 text-center hover:bg-gray-100">
+                        {category.title}
+                    </Link>
+                    
                     ))}
                 </div>
-            ))}
-        </div>
-    );
+                <div className="mr-4">
+                    <h3 className="font-semibold text-center">Erkek</h3>
+                    {erkekCategories.map((category) => (
+                      <Link key={category.id} to={`/shop/${category.code.split(':')[1]}`} className="block px-4 py-2 text-center hover:bg-gray-100">
+                      {category.title}
+                  </Link>
+                  
+                    ))}
+                </div>
+            </div>
+        );
+    };
 
     return (
         <header className="bg-white mt-6 relative z-10 mb-4">
+            {loading && <LoadingSpinner />}  
             <div className="px-4 justify-between flex items-center w-[92%] mx-auto">
                 <div className='flex items-center space-x-28'>
                     <Link to="/" className="font-bold text-xl">Bandage</Link>
@@ -459,13 +439,10 @@ const SecondHeader = () => {
                                     </Link>
                                     {item.name === 'Shop' && isShopDropDownOpen && (
                                         <div className="bg-white shadow-md mt-2 w-48 rounded-md py-2 text-gray-700">
-                                            {dropdownItems.map((dropdown) => (
-                                                <div key={dropdown.category}>
-                                                    <Link to="#" className="block px-4 py-2 font-semibold hover:bg-gray-100">{dropdown.category}</Link>
-                                                    {dropdown.items.map((subItem) => (
-                                                        <Link key={subItem.to} to={subItem.to} className="block px-4 py-2 hover:bg-gray-100">{subItem.name}</Link>
-                                                    ))}
-                                                </div>
+                                            {categories.map((category) => (
+                                                <Link key={category.id} to={`/shop/${category.gender}/${category.name}`} className="block px-4 py-2 hover:bg-gray-100">
+                                                    {category.name}
+                                                </Link>
                                             ))}
                                         </div>
                                     )}

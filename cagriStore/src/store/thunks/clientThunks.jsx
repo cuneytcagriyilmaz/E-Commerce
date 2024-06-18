@@ -1,5 +1,3 @@
-// clientThunks.js
-
 import { setUser } from '../actions/clientActions';
 import { axiosInstance } from '../api/axiosInstance';
 
