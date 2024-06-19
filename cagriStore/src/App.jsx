@@ -1,7 +1,7 @@
- import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';  
-import 'react-toastify/dist/ReactToastify.css';  
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import HomePage from './pages/HomePage';
 import ProductListPage from './pages/ProductListPage';
 import ProductDetailPage from './pages/ProductDetailPage';
@@ -18,21 +18,23 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-     setTimeout(() => {
-      setIsLoading(false);  
-    }, 1000);  
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
   }, []);
 
   return (
     <Router>
       <div>
-         {isLoading ? (
+        {isLoading ? (
           <LoadingSpinner />
         ) : (
           <Switch>
             <Route path="/" exact component={HomePage} />
             <Route path="/shop" exact component={ProductListPage} />
-            <Route path="/shop/:id" component={ProductDetailPage} />
+            <Route path="/shop/:category" exact component={ProductListPage} />
+
+            <Route path="/shop/item/:id" exact component={ProductDetailPage} />
             <Route path="/contact" component={Contact} />
             <Route path="/aboutus" component={AboutUs} />
             <Route path="/team" component={Team} />

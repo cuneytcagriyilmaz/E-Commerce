@@ -18,7 +18,7 @@ const initialProductState = {
             department: "English Department",
             originalPrice: 16.48,
             discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
+             
         },
         {
             id: 2,
@@ -27,7 +27,7 @@ const initialProductState = {
             department: "English Department",
             originalPrice: 16.48,
             discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
+             
         },
         {
             id: 3,
@@ -36,7 +36,7 @@ const initialProductState = {
             department: "English Department",
             originalPrice: 16.48,
             discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
+             
         },
         {
             id: 4,
@@ -45,7 +45,7 @@ const initialProductState = {
             department: "English Department",
             originalPrice: 16.48,
             discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
+             
         },
         {
             id: 5,
@@ -54,7 +54,7 @@ const initialProductState = {
             department: "English Department",
             originalPrice: 16.48,
             discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
+             
         },
         {
             id: 6,
@@ -63,7 +63,7 @@ const initialProductState = {
             department: "English Department",
             originalPrice: 16.48,
             discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
+             
         },
         {
             id: 7,
@@ -72,7 +72,7 @@ const initialProductState = {
             department: "English Department",
             originalPrice: 16.48,
             discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
+             
         },
         {
             id: 8,
@@ -81,7 +81,7 @@ const initialProductState = {
             department: "English Department",
             originalPrice: 16.48,
             discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
+             
         },
         {
             id: 9,
@@ -90,7 +90,7 @@ const initialProductState = {
             department: "English Department",
             originalPrice: 16.48,
             discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
+             
         },
         {
             id: 10,
@@ -99,8 +99,7 @@ const initialProductState = {
             department: "English Department",
             originalPrice: 16.48,
             discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
+         },
         {
             id: 11,
             image: "/img/productCardsShop/productCardsShop11.jpeg",
@@ -108,8 +107,7 @@ const initialProductState = {
             department: "English Department",
             originalPrice: 16.48,
             discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        },
+         },
         {
             id: 12,
             image: "/img/productCardsShop/productCardsShop12.jpeg",
@@ -117,8 +115,7 @@ const initialProductState = {
             department: "English Department",
             originalPrice: 16.48,
             discountedPrice: 6.48,
-            colors: ['#23A6F0', '#23856D', '#E77C40', '#252B42'],
-        }
+         }
     ],
     total: 0,
     limit: 25,

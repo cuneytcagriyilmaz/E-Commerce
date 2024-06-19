@@ -2,10 +2,14 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 const ProductCard = ({ product, isInsideProductDescription }) => {
+
+  const colors = ['#23A6F0', '#23856D', '#E77C40', '#252B42'];
+
+
   const history = useHistory();
 
   const handleClick = () => {
-    history.push(`/shop/${product.id}`);
+    history.push(`/shop/item/${product.id}`);
   };
 
   function isInsideTrue() {
@@ -38,7 +42,7 @@ const ProductCard = ({ product, isInsideProductDescription }) => {
             <span className="line-through text-gray-500 ml-2">${product.originalPrice}</span>
           </div>
           <div className="flex mt-4">
-            {product.colors.map((color, index) => (
+            {colors.map((color, index) => (
               <span
                 key={index}
                 className="w-6 h-6 rounded-full mr-2"
