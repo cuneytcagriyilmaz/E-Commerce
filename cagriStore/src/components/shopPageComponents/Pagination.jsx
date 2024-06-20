@@ -1,3 +1,5 @@
+ 
+
 import React from 'react';
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
@@ -14,7 +16,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
                     onClick={() => onPageChange(1)}
                     disabled={currentPage === 1}
                 >
-                    First
+                    İlk
                 </button>
                 {pages.map(page => (
                     <button
@@ -26,11 +28,11 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
                     </button>
                 ))}
                 <button
-                    className={`p-4 border  text-blue-500 ${currentPage === totalPages ? 'cursor-not-allowed opacity-50' : ''}`}
+                    className={`p-4 border ${currentPage === totalPages ? 'cursor-not-allowed opacity-50' : ''}`}
                     onClick={() => onPageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
                 >
-                    Next
+                    Sonraki
                 </button>
             </div>
         </div>
