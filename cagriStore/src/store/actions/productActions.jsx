@@ -144,7 +144,17 @@ export const fetchProductsByCategoryId = (categoryId, sortOption = 'price:asc', 
         dispatch({ type: ProductActions.SET_FETCH_STATE, payload: "FETCH_ERROR" });
     }
 };
+export const fetchProductById = (productId) => async (dispatch) => {
+    try {
+        const response = await axiosInstance.get(`/products/${productId}`);
+        const productDetail = response.data;
 
+        dispatch({ type: ProductActions.SET_PRODUCT_DETAIL, payload: productDetail });
+
+    } catch (error) {
+        console.error('Error fetching product:', error);
+    }
+};
 
 export const setCategories = (categories) => ({
     type: ProductActions.SET_CATEGORIES,
