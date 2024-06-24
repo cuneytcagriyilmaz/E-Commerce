@@ -1,11 +1,11 @@
- import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from '../../store/api/loginConfig';
 import Gravatar from 'react-gravatar';
 import { setUser } from '../../store/actions/clientActions';
 import { fetchCategories } from '../../store/actions/categoryActions';
-import LoadingSpinner from '../../layout/LoadingSpinner'
+import LoadingSpinner from '../../layout/LoadingSpinner';
 
 const menuItems = [
     { name: 'Home', to: '/' },
@@ -20,17 +20,17 @@ const menuItems = [
 const SecondHeader = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isShopDropDownOpen, setIsShopDropDownOpen] = useState(false);
-    const [loading, setLoading] = useState(true);  
+    const [loading, setLoading] = useState(true);
     const user = useSelector(state => state.client.user);
     const categories = useSelector(state => state.categories.categories);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchCategories())
-            .then(() => setLoading(false))  
+            .then(() => setLoading(false))
             .catch(error => {
                 console.error('Error fetching categories:', error);
-                setLoading(false);  
+                setLoading(false);
             });
     }, [dispatch]);
 
@@ -48,30 +48,36 @@ const SecondHeader = () => {
 
     const renderDropdown = () => {
         if (!categories || categories.length === 0) {
-            return null; 
+            return null;
         }
-    
+
         const kadınCategories = categories.filter(category => category.code.startsWith('k:'));
         const erkekCategories = categories.filter(category => category.code.startsWith('e:'));
-    
+
         return (
             <div className="bg-white shadow-md absolute mt-2 w-auto rounded-md py-2 text-gray-700 flex">
                 <div className="mr-4">
                     <h3 className="font-semibold text-center">Kadın</h3>
                     {kadınCategories.map((category) => (
-                        <Link key={category.id} to={`/shop/${category.code.split(':')[1]}`} className="block px-4 py-2 text-center hover:bg-gray-100">
-                        {category.title}
-                    </Link>
-                    
+                        <Link
+                            key={category.id}
+                            to={`/shop/kadin/${category.title}/${category.id}`}
+                            className="block px-4 py-2 text-center hover:bg-gray-100"
+                        >
+                            {category.title}
+                        </Link>
                     ))}
                 </div>
                 <div className="mr-4">
                     <h3 className="font-semibold text-center">Erkek</h3>
                     {erkekCategories.map((category) => (
-                      <Link key={category.id} to={`/shop/${category.code.split(':')[1]}`} className="block px-4 py-2 text-center hover:bg-gray-100">
-                      {category.title}
-                  </Link>
-                  
+                        <Link
+                            key={category.id}
+                            to={`/shop/erkek/${category.title}/${category.id}`}
+                            className="block px-4 py-2 text-center hover:bg-gray-100"
+                        >
+                            {category.title}
+                        </Link>
                     ))}
                 </div>
             </div>
@@ -80,7 +86,7 @@ const SecondHeader = () => {
 
     return (
         <header className="bg-white mt-6 relative z-10 mb-4">
-            {loading && <LoadingSpinner />}  
+            {loading && <LoadingSpinner />}
             <div className="px-4 justify-between flex items-center w-[92%] mx-auto">
                 <div className='flex items-center space-x-28'>
                     <Link to="/" className="font-bold text-xl">Bandage</Link>
@@ -133,8 +139,12 @@ const SecondHeader = () => {
                                     {item.name === 'Shop' && isShopDropDownOpen && (
                                         <div className="bg-white shadow-md mt-2 w-48 rounded-md py-2 text-gray-700">
                                             {categories.map((category) => (
-                                                <Link key={category.id} to={`/shop/${category.gender}/${category.name}`} className="block px-4 py-2 hover:bg-gray-100">
-                                                    {category.name}
+                                                <Link
+                                                    key={category.id}
+                                                    to={`/shop/${category.gender}/${category.title}/${category.id}`}
+                                                    className="block px-4 py-2 hover:bg-gray-100"
+                                                >
+                                                    {category.title}
                                                 </Link>
                                             ))}
                                         </div>
@@ -150,5 +160,3 @@ const SecondHeader = () => {
 };
 
 export default SecondHeader;
-
- 
