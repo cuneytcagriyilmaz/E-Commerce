@@ -23,7 +23,7 @@ const Carousel = () => {
             <div key={index} className="w-full flex-shrink-0 relative h-full">
               <img src={image.url} alt={image.alt} className="w-full h-full object-cover" />
               <div className="absolute top-1/2 left-1/2 md:left-1/3 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-lg text-center md:text-left p-8">
-                <p className="text-white text-sm uppercase tracking-wide md:pb-20">Summer 2020</p>
+                <p className="text-white text-sm uppercase tracking-wide md:pb-20">Summer 2024</p>
                 <h1 className="text-white text-4xl font-bold mt-2 md:pb-20 md:text-[40px]">NEW COLLECTION</h1>
                 <p className="text-white text-lg mt-2 max-w-lg">{image.description}</p>
                 <button className="bg-green-500 text-white font-bold py-2 px-6 rounded mt-4">SHOP NOW</button>

@@ -4,6 +4,21 @@ import MeetOurTeamCard from '../generalComponents/MeetOurTeamCard';
 
 const teamMembers = [
     {
+        username: "Cuneyt Cagri YILMAZ",
+        profession: "Full Stack Developer",
+        imageUrl: "img/teamPage/CuneytCagriYilmaz.jpeg",
+    },
+    {
+        username: "Erhan FIRAT",
+        profession: "Project Owner",
+        imageUrl: "img/teamPage/ErhanFirat.jpeg",
+    },
+    {
+        username: "Gökhan OZDEMIR",
+        profession: " Scrum Master",
+        imageUrl: "img/teamPage/gokhanOzdemir.jpeg",
+    },
+    {
         username: "username",
         profession: "Profession",
         imageUrl: "img/teamPage/m1.jpeg",
