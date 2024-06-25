@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { fetchProductById } from "../../../store/actions/productActions";
-import LoadingSpinner from "../../../layout/LoadingSpinner";
-import { addToCart } from "../../../store/actions/shoppingCartActions";
+
+
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { fetchProductById } from '../../../store/actions/productActions';
+import { addToCart } from '../../../store/actions/shoppingCartActions';
+import LoadingSpinner from '../../../layout/LoadingSpinner';
 
 const ProductDetailSlider = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -90,16 +92,11 @@ const ProductDetailSlider = () => {
                         <span className="w-6 h-6 bg-black rounded-full block"></span>
                     </div>
                     <div className="flex space-x-4 mt-8">
-                        <button
-                            onClick={handleAddToCart}
-                            className="bg-navbarLigthBlue text-white px-4 py-2 rounded hover:bg-blue-600"
-                        >
-                            Add To Cart
-                        </button>
+                        <button onClick={handleAddToCart} className="bg-navbarLigthBlue text-white px-4 py-2 rounded hover:bg-blue-600">Add To Cart</button>
                         <button className="bg-white border rounded-full hover:text-gray-700 p-2">
                             <i className="far fa-lg fa-heart"></i>
                         </button>
-                        <button className="bg-white border rounded-full hover:text-gray-700 p-2">
+                        <button onClick={handleAddToCart} className="bg-white border rounded-full hover:text-gray-700 p-2">
                             <i className="fas fa-lg fa-shopping-cart"></i>
                         </button>
                         <button className="bg-white border rounded-full hover:text-gray-700 p-2">
