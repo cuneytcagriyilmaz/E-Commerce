@@ -1,16 +1,19 @@
 import { ShoppingCartActions } from '../reducers/shoppingCartReducer';
 
-export const setCart = (cartItems) => ({
-    type: ShoppingCartActions.SET_CART,
-    payload: cartItems
-});
+export const addToCart = (product) => (dispatch, getState) => {
+    const { cart: { cart } } = getState();  
 
-export const setPayment = (paymentInfo) => ({
-    type: ShoppingCartActions.SET_PAYMENT,
-    payload: paymentInfo
-});
+    const existingProductIndex = cart.findIndex(item => item.product.id === product.id);
 
-export const setAddress = (addressInfo) => ({
-    type: ShoppingCartActions.SET_ADDRESS,
-    payload: addressInfo
-});
+    if (existingProductIndex >= 0) {
+        dispatch({
+            type: ShoppingCartActions.INCREASE_QUANTITY,
+            payload: product.id,
+        });
+    } else {
+        dispatch({
+            type: ShoppingCartActions.ADD_TO_CART,
+            payload: { product, count: 1, checked: true },
+        });
+    }
+};
