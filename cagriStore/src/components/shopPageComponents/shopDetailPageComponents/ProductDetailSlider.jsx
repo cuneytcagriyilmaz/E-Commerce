@@ -1,12 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { fetchProductById } from "../../../store/actions/productActions";
+import LoadingSpinner from "../../../layout/LoadingSpinner";
 
 const ProductDetailSlider = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const dispatch = useDispatch();
+    const product = useSelector((state) => state.product.productDetail);
+    const params = useParams();
+    const productId = Number(params.productId);
 
-    const images = [
-        "/img/productCardsShop/productCardsShop11.jpeg",
-        "/img/productCardsShop/productCardsShop1.jpeg",
-    ];
+    useEffect(() => {
+        dispatch(fetchProductById(productId));
+    }, [dispatch, productId]);
+
+    if (!product) {
+        return <LoadingSpinner />;
+    }
+
+    const images = product.images.map((image) => image.url);
 
     const showSlide = (index) => {
         setCurrentSlide(index);
@@ -20,15 +33,17 @@ const ProductDetailSlider = () => {
         showSlide((currentSlide - 1 + images.length) % images.length);
     };
 
+
+
     return (
         <div className="bg-mainBackgroundWhite py-12">
-            <div className="  mx-auto flex flex-col md:flex-row gap-8 p-3  w-[92%]">
-                <div className="md:w-1/2 flex flex-col ">
+            <div className="mx-auto flex flex-col md:flex-row gap-8 p-3 w-[92%]">
+                <div className="md:w-1/2 flex flex-col">
                     <div className="relative w-full max-w-md h-64 overflow-hidden items-center">
                         <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                             {images.map((image, index) => (
                                 <div className="w-full flex-shrink-0" key={index}>
-                                    <img src={image} alt={`Slide ${index + 1}`} className="w-full h-full object-cover" />
+                                    <img src={image} alt={`Slide ${index + 1}`} className="w-full h-full " />
                                 </div>
                             ))}
                         </div>
@@ -52,22 +67,19 @@ const ProductDetailSlider = () => {
                     </div>
                 </div>
 
-
                 <div className="md:w-1/2 p-4">
-                    <h2 className="text-xl font-bold mb-2">Floating Phone</h2>
+                    <h2 className="text-xl font-bold mb-2">{product.name}</h2>
                     <div className="flex items-center mb-2">
                         <div className="flex items-center text-yellow-500">
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="far fa-star text-gray-400"></i>
+                            {[...Array(5)].map((_, i) => (
+                                <i key={i} className={`fas fa-star ${i < product.rating ? 'text-yellow-500' : 'text-gray-400'}`}></i>
+                            ))}
                         </div>
-                        <span className="ml-2 text-gray-600">(10 Reviews)</span>
+                        <span className="ml-2 text-gray-600">({product.rating} Reviews)</span>
                     </div>
-                    <p className="text-xl font-semibold mb-2">$1,139.33</p>
-                    <p className="text-textColorLightGray mb-2">Availability: <span className="text-navbarLigthBlue"> In Stock</span></p>
-                    <p className="text-[#858585] text-sm mb-4 border-b-2">Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.</p>
+                    <p className="text-xl font-semibold mb-2">${product.price.toFixed(2)}</p>
+                    <p className="text-textColorLightGray mb-2">Availability: <span className="text-navbarLigthBlue">{product.stock > 0 ? "In Stock" : "Out of Stock"}</span></p>
+                    <p className="text-[#858585] text-sm mb-4 border-b-2">{product.description}</p>
                     <div className="flex space-x-2 mb-4">
                         <span className="w-6 h-6 bg-blue-500 rounded-full block"></span>
                         <span className="w-6 h-6 bg-green-500 rounded-full block"></span>
