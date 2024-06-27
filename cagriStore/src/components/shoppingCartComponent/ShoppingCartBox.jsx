@@ -16,12 +16,12 @@ const ShoppingCartBox = () => {
                             <h3 className="text-md font-semibold">{item.product.name}</h3>
                             <p className="text-sm text-gray-600">Beden: {item.product.size} Adet: {item.count}</p>
                         </div>
-                        <div className="text-right text-lg font-bold text-orange-500">${item.product.price}</div>
+                        <div className="text-right text-lg font-bold text-orange-500">${item.product.price.toFixed(2)}</div>
                     </div>
                 </div>
             ))}
             <div className="flex justify-between">
-                <Link to="/cart" className="bg-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-400">Sepete Git</Link>
+                <Link to="/shoppingcart" className="bg-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-400">Sepete Git</Link>
                 <button className="bg-navbarLigthBlue text-white py-2 px-4 rounded hover:bg-orange-600">Siparişi Tamamla</button>
             </div>
         </div>

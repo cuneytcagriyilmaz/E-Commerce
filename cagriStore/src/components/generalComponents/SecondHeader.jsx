@@ -7,7 +7,7 @@ import Gravatar from 'react-gravatar';
 import { setUser } from '../../store/actions/clientActions';
 import { fetchCategories } from '../../store/actions/categoryActions';
 import LoadingSpinner from '../../layout/LoadingSpinner';
- import ShoppingCartBox from '../shoppingCartComponent/ShoppingCartBox';
+import ShoppingCartBox from '../shoppingCartComponent/ShoppingCartBox';
 
 const menuItems = [
     { name: 'Home', to: '/' },
@@ -26,7 +26,7 @@ const SecondHeader = () => {
     const [loading, setLoading] = useState(true);
     const user = useSelector(state => state.client.user);
     const categories = useSelector(state => state.categories.categories);
-    const cart = useSelector(state => state.cart.cart); 
+    const cart = useSelector(state => state.cart.cart);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -52,6 +52,7 @@ const SecondHeader = () => {
         delete axios.defaults.headers.common['Authorization'];
     };
 
+    
     const renderDropdown = () => {
         if (!categories || categories.length === 0) {
             return null;
@@ -138,7 +139,7 @@ const SecondHeader = () => {
             </div>
             {isCartOpen && (
                 <div className="absolute right-10  mt-5  rounded-md p-4 z-20">
-                    <ShoppingCartBox/>
+                    <ShoppingCartBox />
                 </div>
             )}
             {isMenuOpen && (

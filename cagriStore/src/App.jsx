@@ -12,6 +12,7 @@ import Pricing from './pages/Pricing';
 import SignUpPage from './pages/SignUpPage';
 import LoginPage from './pages/LoginPage';
 import LoadingSpinner from './layout/LoadingSpinner';
+import ShoppingCartPages from './pages/ShoppingCartPages';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             {/* <Route path="/shop/item/:id" exact component={ProductDetailPage} /> */}
             <Route path="/shop/:gender/:category/:categoryid/:productnameslug/:productId" exact component={ProductDetailPage} />
             <Route path="/contact" component={Contact} />
+            <Route path="/shoppingcart" component={ShoppingCartPages} />
             <Route path="/aboutus" component={AboutUs} />
             <Route path="/team" component={Team} />
             <Route path="/pricing" component={Pricing} />
