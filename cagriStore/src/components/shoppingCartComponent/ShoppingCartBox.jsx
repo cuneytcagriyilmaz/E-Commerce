@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const ShoppingCart = () => {
+const ShoppingCartBox = () => {
     const cartItems = useSelector((state) => state.cart.cart);
 
     return (
@@ -28,4 +28,4 @@ const ShoppingCart = () => {
     );
 };
 
-export default ShoppingCart;
+export default ShoppingCartBox;

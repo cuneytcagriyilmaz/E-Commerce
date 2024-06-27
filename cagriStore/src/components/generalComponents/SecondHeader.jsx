@@ -7,7 +7,7 @@ import Gravatar from 'react-gravatar';
 import { setUser } from '../../store/actions/clientActions';
 import { fetchCategories } from '../../store/actions/categoryActions';
 import LoadingSpinner from '../../layout/LoadingSpinner';
-import ShoppingCart from '../shoppingCartComponent/ShoppingCart';
+ import ShoppingCartBox from '../shoppingCartComponent/ShoppingCartBox';
 
 const menuItems = [
     { name: 'Home', to: '/' },
@@ -26,7 +26,7 @@ const SecondHeader = () => {
     const [loading, setLoading] = useState(true);
     const user = useSelector(state => state.client.user);
     const categories = useSelector(state => state.categories.categories);
-    const cart = useSelector(state => state.cart.cart); // Assuming your cart state is structured like this
+    const cart = useSelector(state => state.cart.cart); 
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -138,7 +138,7 @@ const SecondHeader = () => {
             </div>
             {isCartOpen && (
                 <div className="absolute right-10  mt-5  rounded-md p-4 z-20">
-                    <ShoppingCart />
+                    <ShoppingCartBox/>
                 </div>
             )}
             {isMenuOpen && (
