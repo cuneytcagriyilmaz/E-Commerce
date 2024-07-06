@@ -15,6 +15,7 @@ import LoadingSpinner from "./layout/LoadingSpinner";
 import ShoppingCartPages from "./pages/ShoppingCartPages";
 import { useDispatch } from "react-redux";
 import { verifyToken } from "./store/auth";
+import CreateOrder from "./pages/CreateOrder";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -55,6 +56,7 @@ function App() {
             <Route path="/shoppingcart" component={ShoppingCartPages} />
             <Route path="/aboutus" component={AboutUs} />
             <Route path="/team" component={Team} />
+            <Route path="/order" component={CreateOrder} />
             <Route path="/pricing" component={Pricing} />
             <Route path="/signup" component={SignUpPage} />
             <Route path="/login" component={LoginPage} />
