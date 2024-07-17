@@ -307,7 +307,7 @@ const AddressInfo = () => {
       const response = await axiosInstance.delete(`/user/address/${addressId}`);
       console.log("Address deleted successfully:", response.data);
 
-      // Refetch addresses after deletion
+      
       const fetchResponse = await axiosInstance.get("/user/address");
       if (fetchResponse.data && Array.isArray(fetchResponse.data)) {
         const formattedAddresses = fetchResponse.data.map((address) => ({
@@ -318,7 +318,7 @@ const AddressInfo = () => {
           details: `${address.address || ""}, ${address.neighborhood || ""}, ${
             address.district || ""
           }, ${address.city || ""}`,
-          type: "", // Adjust this if you have type information
+          type: "",  
         }));
         setAddresses(formattedAddresses);
         if (!selectedAddress && formattedAddresses.length > 0) {

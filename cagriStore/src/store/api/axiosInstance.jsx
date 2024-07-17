@@ -9,6 +9,10 @@
 
 // axiosInstance.interceptors.request.use(
 //   (config) => {
+//     const token = localStorage.getItem("token");
+//     if (token) {
+//       config.headers.Authorization = token;
+//     }
 //     console.log("Request:", config);
 //     return config;
 //   },
@@ -29,7 +33,6 @@
 //   }
 // );
 
-// export default axiosInstance;
 import axios from "axios";
 
 export const axiosInstance = axios.create({
@@ -41,9 +44,9 @@ export const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("token"); // Get token from localStorage
+    const token = localStorage.getItem("token");
     if (token) {
-      config.headers.Authorization = token; // Set token without "Bearer" prefix
+      config.headers.Authorization = token;
     }
     console.log("Request:", config);
     return config;
@@ -65,4 +68,42 @@ axiosInstance.interceptors.response.use(
   }
 );
 
- 
+export const fetchSavedCards = async () => {
+  try {
+    const response = await axiosInstance.get("/user/card");
+    return response.data.cards;
+  } catch (error) {
+    console.error("Error fetching saved cards:", error);
+    throw error;
+  }
+};
+
+export const addNewCard = async (cardData) => {
+  try {
+    const response = await axiosInstance.post("/user/card", cardData);
+    return response.data;
+  } catch (error) {
+    console.error("Error adding new card:", error);
+    throw error;
+  }
+};
+
+export const updateCard = async (cardData) => {
+  try {
+    const response = await axiosInstance.put(`/user/card`, cardData);
+    return response.data;
+  } catch (error) {
+    console.error("Error updating card:", error);
+    throw error;
+  }
+};
+
+export const deleteCard = async (cardId) => {
+  try {
+    const response = await axiosInstance.delete(`/user/card/${cardId}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error deleting card:", error);
+    throw error;
+  }
+};

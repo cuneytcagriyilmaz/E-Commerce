@@ -67,10 +67,11 @@ function CreateOrder() {
           )}
           {currentStep === "payment" && <CreditCardForm />}
         </div>
-        <div className="flex">
+        <div className="flex-row">
           <OrderSummary />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
