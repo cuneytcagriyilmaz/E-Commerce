@@ -66,7 +66,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-const OrderSummary = ({ isCreateOrderContext }) => {
+const OrderSummary = ({ isCreateOrderContext }) => {        
   const cart = useSelector((state) => state.cart.cart);
   const history = useHistory();
 
