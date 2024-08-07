@@ -20,6 +20,20 @@ const AddressInfo = () => {
   const [currentAddress, setCurrentAddress] = useState(null);
   const [editing, setEditing] = useState(false);
 
+  const filteredAddresses =
+    Array.isArray(addresses) && addresses.length > 0
+      ? addresses.filter((address) => address.id === selectedAddress)
+      : [];
+
+  console.log(filteredAddresses);
+
+   useEffect(() => {
+    localStorage.setItem(
+      "filteredAddresses",
+      JSON.stringify(filteredAddresses)
+    );
+  }, [filteredAddresses]);
+
   useEffect(() => {
     const fetchAddresses = async () => {
       try {
@@ -349,7 +363,9 @@ const AddressInfo = () => {
                 {address.name} {address.surname}
               </p>
               <p>{address.phone}</p>
-              <p>{address.city}, {address.district}, {address.neighborhood}</p>
+              <p>
+                {address.city}, {address.district}, {address.neighborhood}
+              </p>
               <div className="flex justify-end mt-2">
                 <button
                   onClick={() => handleEditAddress(address)}

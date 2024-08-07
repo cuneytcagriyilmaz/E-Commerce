@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import {
   fetchSavedCards,
@@ -38,6 +36,23 @@ const CreditCardForm = () => {
     expire_year: "",
     name_on_card: "",
   });
+
+  const [filteredAddresses, setFilteredAddresses] = useState([]);
+  useEffect(() => {
+    const addresses = localStorage.getItem("filteredAddresses");
+    if (addresses) {
+      const parsedAddresses = JSON.parse(addresses);
+      setFilteredAddresses(parsedAddresses);
+    }
+  }, []);
+
+  const getAddressInfo = () => {
+    if (filteredAddresses.length > 0) {
+      const address = filteredAddresses[0];
+      return `${address.id}`;
+    }
+    return -1;
+  };
 
   useEffect(() => {
     fetchCards();
@@ -105,9 +120,11 @@ const CreditCardForm = () => {
   const selectedCard = savedCards.find((card) => card.id === selectedCardId);
 
   const handleCVVSubmit = async () => {
+    getAddressInfo();
+
     try {
       await createOrder({
-        address_id: 1,
+        address_id: getAddressInfo(),
         order_date: new Date().toISOString(),
         card_no: selectedCard.card_no,
         card_name: selectedCard.name_on_card,
