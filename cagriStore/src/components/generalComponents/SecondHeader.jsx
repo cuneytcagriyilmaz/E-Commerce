@@ -16,7 +16,7 @@ const menuItems = [
     { name: 'Contact', to: '/contact' },
     { name: 'About Us', to: '/aboutus' },
     { name: 'Team', to: '/team' },
-    { name: 'Pages', to: '/pages' },
+    { name: 'Previous Order', to: '/previousorder' },
 ];
 
 const SecondHeader = () => {

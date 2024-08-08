@@ -16,6 +16,7 @@ import ShoppingCartPages from "./pages/ShoppingCartPages";
 import { useDispatch } from "react-redux";
 import { verifyToken } from "./store/auth";
 import CreateOrder from "./pages/CreateOrder";
+import PreviousOrderPage from "./pages/PreviousOrderPage";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -60,6 +61,7 @@ function App() {
             <Route path="/pricing" component={Pricing} />
             <Route path="/signup" component={SignUpPage} />
             <Route path="/login" component={LoginPage} />
+            <Route path="/previousorder" component={PreviousOrderPage} />
           </Switch>
         )}
         <ToastContainer />
