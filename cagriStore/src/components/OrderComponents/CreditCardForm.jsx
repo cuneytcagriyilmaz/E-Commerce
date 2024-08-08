@@ -6,7 +6,10 @@ import {
   deleteCard,
   createOrder,
 } from "../../store/api/axiosInstance";
-import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useSelector, useDispatch } from "react-redux";
+import { ShoppingCartActions } from "../../store/reducers/shoppingCartReducer";
 
 const CreditCardForm = () => {
   const [showNewCardForm, setShowNewCardForm] = useState(false);
@@ -119,12 +122,41 @@ const CreditCardForm = () => {
 
   const selectedCard = savedCards.find((card) => card.id === selectedCardId);
 
+  // const handleCVVSubmit = async () => {
+  //   getAddressInfo();
+
+  //   try {
+  //     await createOrder({
+  //       address_id: getAddressInfo(),
+  //       order_date: new Date().toISOString(),
+  //       card_no: selectedCard.card_no,
+  //       card_name: selectedCard.name_on_card,
+  //       card_expire_month: selectedCard.expire_month,
+  //       card_expire_year: selectedCard.expire_year,
+  //       card_ccv: cvv,
+  //       price: grandTotal,
+  //       products: cart.map((item) => ({
+  //         product_id: item.product.id,
+  //         count: item.count,
+  //         detail: item.product.description,
+  //       })),
+  //     });
+  //     setShowCVVInput(false);
+  //     alert("Sipariş başarılı!");
+  //   } catch (error) {
+  //     console.error("Error creating order:", error);
+  //     alert("Sipariş oluşturulurken hata oluştu.");
+  //   }
+  // };
+
+  const dispatch = useDispatch();
+
   const handleCVVSubmit = async () => {
-    getAddressInfo();
+    const addressId = getAddressInfo();
 
     try {
       await createOrder({
-        address_id: getAddressInfo(),
+        address_id: addressId,
         order_date: new Date().toISOString(),
         card_no: selectedCard.card_no,
         card_name: selectedCard.name_on_card,
@@ -138,11 +170,18 @@ const CreditCardForm = () => {
           detail: item.product.description,
         })),
       });
-      setShowCVVInput(false);
-      alert("Sipariş başarılı!");
+
+      toast.success("Sipariş başarılı!", {
+        className: "z-[9999]",
+        bodyClassName: "font-medium",
+        position: "top-right",
+      });
+      toast.info("Siparişiniz başarılı bir şekilde oluşturuldu!");
+
+      dispatch({ type: ShoppingCartActions.CLEAR_CART });
     } catch (error) {
       console.error("Error creating order:", error);
-      alert("Sipariş oluşturulurken hata oluştu.");
+      toast.error("Sipariş oluşturulurken bir hata oluştu.");
     }
   };
 
